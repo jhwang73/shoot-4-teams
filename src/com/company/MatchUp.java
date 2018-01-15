@@ -6,16 +6,23 @@ import java.util.Map;
  * A match up of two teams.
  */
 public class MatchUp {
-  private final int numPlayers;
   private ArrayList<String> team1;
   private ArrayList<String> team2;
 
-  public MatchUp(int numP, ArrayList<String> playerList, ArrayList<String> t1, ArrayList<String> t2) {
-    numPlayers = numP;
+  public MatchUp(ArrayList<String> playerList, ArrayList<String> t1, ArrayList<String> t2) {
     team1 = t1;
     team2 = t2;
-}
+  }
 
+  public ArrayList<String> getTeam1() { return team1; }
+
+  public ArrayList<String> getTeam2() { return team2; }
+
+  /**
+   * Returns a random matchup.
+   * @param playerList
+   * @return
+   */
   public static MatchUp randomMatchUp(ArrayList<String> playerList) {
     int numP = playerList.size();
 
@@ -51,11 +58,18 @@ public class MatchUp {
         }
       }
 
-      return new MatchUp(numP, playerList, t1, t2);
+      return new MatchUp(playerList, t1, t2);
     }
   }
 
-  public static MatchUp childMatchUp(ArrayList<String> playerList, Map<String, Map<String, Integer>> probabilities) {
+  /**
+   * Returns a match up that is formed using a nested mapping of players to players to int.
+   * @param playerList
+   * @param counts counts[player1][player2] contains the number of times player 1 was on the same team as player2
+   *               in the matchups chosen when making the mapping.
+   * @return
+   */
+  public static MatchUp childMatchUp(ArrayList<String> playerList, Map<String, Map<String, Integer>> counts) {
     int numP = playerList.size();
 
     if (numP % 2 == 1) {
@@ -79,7 +93,7 @@ public class MatchUp {
           break;
         } else {
           String nextPlayer = playerList.get(currentNumP);
-          if (playerToTeam1(nextPlayer, t1, t2, probabilities)) {
+          if (playerToTeam1(nextPlayer, t1, t2, counts)) {
             t1.add(playerList.get(currentNumP));
             t1CurrentNumP += 1;
             currentNumP += 1;
@@ -91,15 +105,24 @@ public class MatchUp {
         }
       }
 
-      return new MatchUp(numP, playerList, t1, t2);
+      return new MatchUp(playerList, t1, t2);
     }
   }
 
-  private static boolean playerToTeam1(String player, ArrayList<String> t1, ArrayList<String> t2, Map<String, Map<String, Integer>> probabilities) {
-    int team1Total = t1.stream().mapToInt(teamMate -> probabilities.get(player).get(teamMate)).sum();
-    int team2Total = t2.stream().mapToInt(teamMate -> probabilities.get(player).get(teamMate)).sum();
+  /**
+   * Returns true if the weighted random selection placed player in team1. False otherwise.
+   * @param player
+   * @param t1
+   * @param t2
+   * @param counts
+   * @return
+   */
+  private static boolean playerToTeam1(String player, ArrayList<String> t1, ArrayList<String> t2, Map<String, Map<String, Integer>> counts) {
+    int team1Total = t1.stream().mapToInt(teamMate -> counts.get(player).get(teamMate)).sum();
+    int team2Total = t2.stream().mapToInt(teamMate -> counts.get(player).get(teamMate)).sum();
     int totalCount = team1Total + team2Total;
 
+    // Simply add the counts, and perform a proportionally weighted coin toss
     return (int)(Math.random() * totalCount) < team1Total;
   }
 
