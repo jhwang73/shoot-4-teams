@@ -8,8 +8,9 @@ import java.util.Map;
 public class MatchUp {
   private ArrayList<String> team1;
   private ArrayList<String> team2;
+  private final double MUTATIONRATIO = 0.2;
 
-  public MatchUp(ArrayList<String> playerList, ArrayList<String> t1, ArrayList<String> t2) {
+  public MatchUp(ArrayList<String> t1, ArrayList<String> t2) {
     team1 = t1;
     team2 = t2;
   }
@@ -58,7 +59,7 @@ public class MatchUp {
         }
       }
 
-      return new MatchUp(playerList, t1, t2);
+      return new MatchUp(t1, t2);
     }
   }
 
@@ -105,7 +106,7 @@ public class MatchUp {
         }
       }
 
-      return new MatchUp(playerList, t1, t2);
+      return new MatchUp(t1, t2);
     }
   }
 
@@ -124,6 +125,21 @@ public class MatchUp {
 
     // Simply add the counts, and perform a proportionally weighted coin toss
     return (int)(Math.random() * totalCount) < team1Total;
+  }
+
+  public MatchUp mutate() {
+    ArrayList<String> newt1 = new ArrayList<>();
+    ArrayList<String> newt2 = new ArrayList<>();
+    for (int i = 0; i < team1.size(); i++) {
+      if (Math.random() < MUTATIONRATIO) {
+        newt1.add(team2.get(i));
+        newt2.add(team1.get(i));
+      } else {
+        newt1.add(team1.get(i));
+        newt2.add(team2.get(i));
+      }
+    }
+    return new MatchUp(newt1, newt2);
   }
 
   @Override
