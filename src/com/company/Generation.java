@@ -3,7 +3,9 @@ package com.company;
 import com.company.MatchUp;
 
 import java.util.ArrayList;
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.IdentityHashMap;
+import java.util.Map;
 
 /**
  * A generation of multiple team match-ups.
@@ -29,7 +31,7 @@ public class Generation {
    * Returns a random generation of match ups. Use this for generation 0.
    * @param playerList
    * @param generationCount
-   * @return
+   * @return Generation instance
    */
   public static Generation randomGeneration(ArrayList<String> playerList, int generationCount) {
     ArrayList<MatchUp> matchUpsList = new ArrayList<MatchUp>();
@@ -41,18 +43,55 @@ public class Generation {
 
   /**
    * Returns the next generation of match ups.
-   * @param playerList
-   * @param prevGeneration
    * @param parents
-   * @return
+   * @return Generation instance
    */
-  public static Generation breedNewGeneration(ArrayList<String > playerList, ArrayList<MatchUp> prevGeneration, int[] parents) {
-    return null;
+  public Generation breedNextGeneration(int[] parents) {
+    Map<String, Map<String, Integer>> counts = makeCounts(parents);
+    ArrayList<MatchUp> nextMatchUps = new ArrayList<MatchUp>();
+    for (int i = 0; i < generationSize; i++) {
+      nextMatchUps.add(MatchUp.childMatchUp(players, counts));
+    }
+    return new Generation(players, generationSize, nextMatchUps);
+  }
+
+  /**
+   * Returns the count of how many times every player was on the same team as every other player
+   * @param parents
+   * @return Nested mapping Player1:Player2:int
+   */
+  private Map<String, Map<String, Integer>> makeCounts(int[] parents) {
+    Map<String, Map<String, Integer>> counts = new IdentityHashMap<>();
+
+    // For every player
+    for (String player:players) {
+      counts.put(player, new IdentityHashMap<>());
+    }
+    for (int parent:parents) {
+      for (String teammate:matchUps.get(parent).getTeam1()) {
+        for (String teammate2:matchUps.get(parent).getTeam1()) {
+          counts.get(teammate).put(teammate2, counts.get(teammate).get(teammate2) + 1);
+          counts.get(teammate2).put(teammate, counts.get(teammate2).get(teammate) + 1);
+        }
+      }
+      for (String teammate:matchUps.get(parent).getTeam2()) {
+        for (String teammate2:matchUps.get(parent).getTeam2()) {
+          counts.get(teammate).put(teammate2, counts.get(teammate).get(teammate2) + 1);
+          counts.get(teammate2).put(teammate, counts.get(teammate2).get(teammate) + 1);
+        }
+      }
+    }
+
+    return counts;
   }
 
   @Override
   public String toString() {
-    return matchUps.stream().map(MatchUp::toString).toString();
+    String returnString = "";
+    for (int i = 0; i < generationSize; i++) {
+      returnString += "MatchUp #" + i + "\n" + matchUps.get(i).toString() + "\n" + "\n";
+    }
+    return returnString;
   }
 
 }
