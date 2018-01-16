@@ -13,20 +13,40 @@ public class Generation {
   private final int generationSize;
   private ArrayList<MatchUp> matchUps;
 
-  public Generation(ArrayList<String > playerList, int generationCount) {
+  public Generation(ArrayList<String > playerList, int generationCount, ArrayList<MatchUp> matchUpsList) {
     players = playerList;
     generationSize = generationCount;
-    matchUps = null;
+    matchUps = matchUpsList;
+  }
+
+  public ArrayList<String> getPlayers() { return players; }
+
+  public int getGenerationSize() { return generationSize; }
+
+  public ArrayList<MatchUp> getMatchUps() { return matchUps; }
+
+  /**
+   * Returns a random generation of match ups. Use this for generation 0.
+   * @param playerList
+   * @param generationCount
+   * @return
+   */
+  public static Generation randomGeneration(ArrayList<String> playerList, int generationCount) {
+    ArrayList<MatchUp> matchUpsList = new ArrayList<MatchUp>();
+    for (int i = 0; i < generationCount; i++) {
+      matchUpsList.add(MatchUp.randomMatchUp(playerList));
+    }
+    return new Generation(playerList, generationCount, matchUpsList);
   }
 
   /**
    * Returns the next generation of match ups
-   * @param players
+   * @param playerList
    * @param prevGeneration
    * @param parents
    * @return
    */
-  public static Generation breedNewGeneration(ArrayList<String > players, ArrayList<MatchUp> prevGeneration, int[] parents) {
+  public static Generation breedNewGeneration(ArrayList<String > playerList, ArrayList<MatchUp> prevGeneration, int[] parents) {
     return null;
   }
 
