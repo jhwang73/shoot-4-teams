@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="de4b3364-12ae-44ea-b6a2-3715d45b7f78" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Generation.java" afterPath="$PROJECT_DIR$/src/com/company/Generation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/GenerationTest.java" afterPath="$PROJECT_DIR$/src/test/GenerationTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/MatchUp.java" afterPath="$PROJECT_DIR$/src/com/company/MatchUp.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,34 +49,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchUp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MatchUp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/MatchUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="145" column="28" lean-forward="true" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
+            <state relative-caret-position="449">
+              <caret line="137" column="26" lean-forward="false" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#MatchUp#0;class#MatchUp#0" expanded="false" />
                 <element signature="method#randomMatchUp#0;class#MatchUp#0" expanded="false" />
                 <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
                 <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
-                <element signature="e#4556#4557#0" expanded="true" />
+                <element signature="method#mutate#0;class#MatchUp#0" expanded="false" />
+                <element signature="e#5047#5048#0" expanded="true" />
+                <element signature="e#5106#5107#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Generation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Generation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Generation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="154">
+              <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#randomGeneration#0;class#Generation#0" expanded="false" />
                 <element signature="e#998#1007#0" expanded="true" />
-                <element signature="e#1530#1531#0" expanded="true" />
-                <element signature="e#1598#1599#0" expanded="true" />
+                <element signature="e#1531#1532#0" expanded="true" />
+                <element signature="e#1599#1600#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,12 +124,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/company/Matching.java" />
         <option value="$PROJECT_DIR$/testPlayers.txt" />
-        <option value="$PROJECT_DIR$/src/com/company/MatchUp.java" />
         <option value="$PROJECT_DIR$/src/test/MatchUpTest.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test/GenerationTest.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Generation.java" />
+        <option value="$PROJECT_DIR$/src/com/company/MatchUp.java" />
       </list>
     </option>
   </component>
@@ -335,7 +336,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27698863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33948863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -361,7 +362,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -386,7 +387,9 @@
             <element signature="method#randomMatchUp#0;class#MatchUp#0" expanded="false" />
             <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
             <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
-            <element signature="e#4556#4557#0" expanded="true" />
+            <element signature="method#mutate#0;class#MatchUp#0" expanded="false" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5106#5107#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -399,8 +402,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#randomGeneration#0;class#Generation#0" expanded="false" />
             <element signature="e#998#1007#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -480,16 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/MatchUpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="8" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -500,31 +493,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/MatchUp.java">
+    <entry file="file://$PROJECT_DIR$/src/test/MatchUpTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="145" column="28" lean-forward="true" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
+        <state relative-caret-position="112">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="8" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#MatchUp#0;class#MatchUp#0" expanded="false" />
-            <element signature="method#randomMatchUp#0;class#MatchUp#0" expanded="false" />
-            <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
-            <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
-            <element signature="e#4556#4557#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Generation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="154">
+          <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#randomGeneration#0;class#Generation#0" expanded="false" />
             <element signature="e#998#1007#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/MatchUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="137" column="26" lean-forward="false" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MatchUp#0;class#MatchUp#0" expanded="false" />
+            <element signature="method#randomMatchUp#0;class#MatchUp#0" expanded="false" />
+            <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
+            <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
+            <element signature="method#mutate#0;class#MatchUp#0" expanded="false" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5106#5107#0" expanded="true" />
           </folding>
         </state>
       </provider>

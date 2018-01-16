@@ -40,7 +40,7 @@ public class Generation {
   }
 
   /**
-   * Returns the next generation of match ups
+   * Returns the next generation of match ups.
    * @param playerList
    * @param prevGeneration
    * @param parents

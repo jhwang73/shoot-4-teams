@@ -22,7 +22,7 @@ public class MatchUp {
   /**
    * Returns a random matchup.
    * @param playerList
-   * @return
+   * @return MatchUp instance.
    */
   public static MatchUp randomMatchUp(ArrayList<String> playerList) {
     int numP = playerList.size();
@@ -40,6 +40,7 @@ public class MatchUp {
 
       // Add the players randomly to one of the two teams
       while (currentNumP < numP) {
+        // If one of them are full, add remaining players to the other team then break
         if (t1CurrentNumP == t1NumP) {
           t2.addAll(playerList.subList(currentNumP, numP));
           break;
@@ -47,6 +48,7 @@ public class MatchUp {
           t1.addAll(playerList.subList(currentNumP, numP));
           break;
         } else {
+          // nextPlayer goes into team 1 at rate of 0.5
           if (Math.random() < 0.5) {
             t1.add(playerList.get(currentNumP));
             t1CurrentNumP += 1;
@@ -68,7 +70,7 @@ public class MatchUp {
    * @param playerList
    * @param counts counts[player1][player2] contains the number of times player 1 was on the same team as player2
    *               in the matchups chosen when making the mapping.
-   * @return
+   * @return MatchUp instance.
    */
   public static MatchUp childMatchUp(ArrayList<String> playerList, Map<String, Map<String, Integer>> counts) {
     int numP = playerList.size();
@@ -86,6 +88,7 @@ public class MatchUp {
 
       // Add the players randomly to one of the two teams
       while (currentNumP < numP) {
+        // If one of them are full, add remaining players to the other team then break
         if (t1CurrentNumP == t1NumP) {
           t2.addAll(playerList.subList(currentNumP, numP));
           break;
@@ -94,6 +97,7 @@ public class MatchUp {
           break;
         } else {
           String nextPlayer = playerList.get(currentNumP);
+          // nextPlayer goes into team 1 at proportional rate
           if (playerToTeam1(nextPlayer, t1, t2, counts)) {
             t1.add(playerList.get(currentNumP));
             t1CurrentNumP += 1;
@@ -116,7 +120,7 @@ public class MatchUp {
    * @param t1
    * @param t2
    * @param counts
-   * @return
+   * @return MatchUp instance.
    */
   private static boolean playerToTeam1(String player, ArrayList<String> t1, ArrayList<String> t2, Map<String, Map<String, Integer>> counts) {
     int team1Total = t1.stream().mapToInt(teamMate -> counts.get(player).get(teamMate)).sum();
@@ -127,9 +131,14 @@ public class MatchUp {
     return (int)(Math.random() * totalCount) < team1Total;
   }
 
+  /**
+   * Mutates a given MatchUp, and returns a new instance of it.
+   * @return MatchUp instance.
+   */
   public MatchUp mutate() {
     ArrayList<String> newt1 = new ArrayList<>();
     ArrayList<String> newt2 = new ArrayList<>();
+    // Mutation goes through the two teams at the same time, swapping them at a given probabilty
     for (int i = 0; i < team1.size(); i++) {
       if (Math.random() < MUTATIONRATIO) {
         newt1.add(team2.get(i));
