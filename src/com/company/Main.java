@@ -5,39 +5,69 @@ import com.company.Generation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import com.company.MatchUp;
+import com.sun.tools.javah.Gen;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+  private static Scanner scanner = new Scanner( System.in );
 
-//        Scan file should check that all names are unique
-      
-      // Read player file
-      ArrayList<String> players = new ArrayList<>();
-      try {
-        File f = new File("testPlayers.txt");
-        BufferedReader b = new BufferedReader(new FileReader(f));
-        String readLine = "";
-        while ((readLine = b.readLine()) != null) {
-          players.add(readLine);
+  /**
+   * Reads a textfile to a list of players. Checks for any duplicate names.
+   * @param pathName
+   * @return
+   */
+  private static ArrayList<String> readFileToPlayers(String pathName) {
+    ArrayList<String> players = new ArrayList<>();
+    try {
+      File f = new File(pathName);
+      BufferedReader b = new BufferedReader(new FileReader(f));
+      String readLine = "";
+      while ((readLine = b.readLine()) != null) {
+        if (players.contains(readLine)) {
+          throw new RuntimeException("All player names must be unique!");
         }
-      } catch (IOException e) {
-        e.printStackTrace();
+        players.add(readLine);
       }
-
-      // Make a random Generation which is generation 0
-      Generation generation0 = Generation.randomGeneration(players, 5);
-
-      // have loop that does this.
-      // present user gneeration.
-      // ask if user is done. if yes, ask for which. present final thing
-      // if no, ask for which ones they like. check that they are valid indices
-      // breedGeneration with those parents
-
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+    return players;
+  }
+
+  public static void main(String[] args) {
+
+    // Read player file
+    ArrayList<String> players = readFileToPlayers("testPlayers.txt");
+
+    // Make a list of generations and make a random Generation which is generation 0
+    ArrayList<Generation> generations = new ArrayList<>();
+    Generation generation0 = Generation.randomGeneration(players, 5);
+    generations.add(generation0);
+
+    while (true) {
+      System.out.println(generations.get(generations.size() - 1));
+      System.out.println("Is there a team match up you want to use? y/n");
+      String cont = scanner.nextLine();
+      if (cont.toLowerCase().equals("y")) {
+        System.out.println("Which match up? Input the number of the match up.");
+      } else if (cont.toLowerCase().equals("n")) {
+        continue;
+      } else {
+        System.out.println("Please type y or n");
+      }
+    }
+
+    // have loop that does this.
+    // present user gneeration.
+    // ask if user is done. if yes, ask for which. present final thing
+    // if no, ask for which ones they like. check that they are valid indices
+    // breedGeneration with those parents
+
+  }
 }
