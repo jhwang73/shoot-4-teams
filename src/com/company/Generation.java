@@ -50,7 +50,9 @@ public class Generation {
     Map<String, Map<String, Integer>> counts = makeCounts(parents);
     ArrayList<MatchUp> nextMatchUps = new ArrayList<MatchUp>();
     for (int i = 0; i < generationSize; i++) {
-      nextMatchUps.add(MatchUp.childMatchUp(players, counts));
+      nextMatchUps.add(MatchUp.childMatchUp(players, counts)
+          // Mutate the matchUp
+          .mutate());
     }
     return new Generation(players, generationSize, nextMatchUps);
   }
