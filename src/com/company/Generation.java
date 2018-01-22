@@ -2,10 +2,7 @@ package com.company;
 
 import com.company.MatchUp;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.IdentityHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * A generation of multiple team match-ups.
@@ -67,7 +64,11 @@ public class Generation {
 
     // For every player
     for (String player:players) {
-      counts.put(player, new IdentityHashMap<>());
+      Map<String, Integer> map1 = new IdentityHashMap<>();
+      for (String teammate:players) {
+        map1.put(teammate, 0);
+      }
+      counts.put(player, map1);
     }
     for (int parent:parents) {
       for (String teammate:matchUps.get(parent).getTeam1()) {
