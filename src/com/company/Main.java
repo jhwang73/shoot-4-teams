@@ -55,29 +55,37 @@ public class Main {
 
   public static void main(String[] args) {
     int generationCount = 2;
+    String divide = "--------------------------------";
 
     // Read player file
     ArrayList<String> players = readFileToPlayers("testPlayers.txt");
 
     // Make a list of generations and make a random Generation which is generation 0
     ArrayList<Generation> generations = initializeGenerations(players, generationCount);
+    int generationNumber = 0;
 
     while (true) {
-      Generation currentGeneration = generations.get(generations.size() - 1);
+      Generation currentGeneration = generations.get(generationNumber);
       // Ask if user is done.
+      System.out.println(divide);
+      System.out.println("Generation " + generationNumber);
       System.out.println(currentGeneration.toString());
       System.out.println("Is there a team match up you want to use? y/n");
+      System.out.println(divide);
       String cont = scanner.nextLine();
 
       // If user is done, ask for which one and end the program.
       if (cont.toLowerCase().equals("y")) {
         System.out.println("Which match up? Input the number of the match up.");
+        System.out.println(divide);
         int chosen = Integer.parseInt(scanner.nextLine());
         if (chosen >= 0 && chosen < generationCount) {
+          System.out.println("Selected Match Up");
           System.out.println(currentGeneration.getMatchUps().get(chosen));
+          System.out.println(divide);
           break;
         } else {
-          System.out.println("Please input a valid number! \n");
+          System.out.println("ERROR: Please input a valid number! \n");
         }
       // If user is not done, ask for which ones to breed, breed, and repeat.
       } else if (cont.toLowerCase().equals("n")) {
@@ -93,18 +101,18 @@ public class Main {
           if (parentIdx >= 0 && parentIdx < generationCount) {
             parents[i] = Integer.parseInt(numberStrs[i]);
           } else {
-            System.out.println("Please input valid numbers!");
             allValid = false;
             break;
           }
         }
         if (allValid) {
           generations.add(currentGeneration.breedNextGeneration(parents));
+          generationNumber += 1;
         } else {
-          break;
+          System.out.println("ERROR: Please input valid numbers!");
         }
       } else {
-        System.out.println("Please type y or n.");
+        System.out.println("ERROR: Please type y or n.");
       }
     }
 
