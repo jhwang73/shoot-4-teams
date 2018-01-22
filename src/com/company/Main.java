@@ -18,7 +18,7 @@ public class Main {
   private static Scanner scanner = new Scanner( System.in );
 
   /**
-   * Reads a textfile to a list of players. Checks for any duplicate names.
+   * Reads a .txt file to a list of players. Checks for any duplicate names.
    * @param pathName
    * @return
    */
@@ -51,26 +51,29 @@ public class Main {
     generations.add(generation0);
 
     while (true) {
-      System.out.println(generations.get(generations.size() - 1));
+      Generation currentGeneration = generations.get(generations.size() - 1);
+      // Ask if user is done.
+      System.out.println(currentGeneration.toString());
       System.out.println("Is there a team match up you want to use? y/n");
       String cont = scanner.nextLine();
+
+      // If user is done, ask for which one and end the program.
       if (cont.toLowerCase().equals("y")) {
         System.out.println("Which match up? Input the number of the match up.");
         int chosen = scanner.nextInt();
         if (chosen >= 0 && chosen < players.size()) {
-          System.out.println(generations.get(chosen));
+          System.out.println(currentGeneration.get);
+          System.out.println("Thank you for using Shoot 4 Teams!");
           break;
         } else {
-          System.out.println("Input a valid number");
-          // Go back to line 59
+          System.out.println("Please input a valid number!");
         }
       } else if (cont.toLowerCase().equals("n")) {
         System.out.println("Which ones would you like to breed? Input the number(s) of the match up(s)");
         // Take numbers, check that they are valid
         // Breed, add new gen to generations, continue
       } else {
-        System.out.println("Please type y or n");
-        // back to line 55
+        System.out.println("Please type y or n.");
       }
     }
 
