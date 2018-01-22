@@ -37,6 +37,9 @@ public class Main {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    if (players.size() % 2 == 1) {
+      throw new RuntimeException("Must have even number of players!");
+    }
     return players;
   }
 
@@ -115,8 +118,6 @@ public class Main {
         System.out.println("ERROR: Please type y or n.");
       }
     }
-
     System.out.println("Thank you for using Shoot 4 Teams!");
-
   }
 }

@@ -24,7 +24,7 @@ public class MatchUpTest {
     ArrayList<String> testT1 = new ArrayList<>(Arrays.asList("Jason"));
     ArrayList<String> testT2 = new ArrayList<>(Arrays.asList("Sam"));
     MatchUp testMU = new MatchUp(testT1, testT2);
-    assertEquals("[Jason]\n" + "[Sam]", testMU.toString());
+    assertEquals("Team 1: [Jason]\n" + "Team 2: [Sam]", testMU.toString());
   }
 
   @Test
