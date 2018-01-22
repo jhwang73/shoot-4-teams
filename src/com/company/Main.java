@@ -54,7 +54,7 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    int generationCount = 5;
+    int generationCount = 2;
 
     // Read player file
     ArrayList<String> players = readFileToPlayers("testPlayers.txt");
@@ -72,12 +72,12 @@ public class Main {
       // If user is done, ask for which one and end the program.
       if (cont.toLowerCase().equals("y")) {
         System.out.println("Which match up? Input the number of the match up.");
-        int chosen = scanner.nextInt();
+        int chosen = Integer.parseInt(scanner.nextLine());
         if (chosen >= 0 && chosen < generationCount) {
           System.out.println(currentGeneration.getMatchUps().get(chosen));
           break;
         } else {
-          System.out.println("Please input a valid number!");
+          System.out.println("Please input a valid number! \n");
         }
       // If user is not done, ask for which ones to breed, breed, and repeat.
       } else if (cont.toLowerCase().equals("n")) {
