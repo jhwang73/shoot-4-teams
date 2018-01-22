@@ -56,18 +56,23 @@ public class Main {
       String cont = scanner.nextLine();
       if (cont.toLowerCase().equals("y")) {
         System.out.println("Which match up? Input the number of the match up.");
+        int chosen = scanner.nextInt();
+        if (chosen >= 0 && chosen < players.size()) {
+          System.out.println(generations.get(chosen));
+          break;
+        } else {
+          System.out.println("Input a valid number");
+          // Go back to line 59
+        }
       } else if (cont.toLowerCase().equals("n")) {
-        continue;
+        System.out.println("Which ones would you like to breed? Input the number(s) of the match up(s)");
+        // Take numbers, check that they are valid
+        // Breed, add new gen to generations, continue
       } else {
         System.out.println("Please type y or n");
+        // back to line 55
       }
     }
-
-    // have loop that does this.
-    // present user gneeration.
-    // ask if user is done. if yes, ask for which. present final thing
-    // if no, ask for which ones they like. check that they are valid indices
-    // breedGeneration with those parents
 
   }
 }
