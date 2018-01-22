@@ -12,7 +12,6 @@ import static org.junit.Assert.*;
 public class MatchUpTest {
   @Test
   public void testMatchUp() throws Exception {
-    ArrayList<String> testPL = new ArrayList<>(Arrays.asList("Jason", "Sam", "Matthew", "Phillip"));
     ArrayList<String> testT1 = new ArrayList<>(Arrays.asList("Jason", "Matthew"));
     ArrayList<String> testT2 = new ArrayList<>(Arrays.asList("Sam", "Phillip"));
     MatchUp testMU = new MatchUp(testT1, testT2);
@@ -22,7 +21,6 @@ public class MatchUpTest {
 
   @Test
   public void testToString() throws Exception {
-    ArrayList<String> testPL = new ArrayList<>(Arrays.asList("Jason", "Sam"));
     ArrayList<String> testT1 = new ArrayList<>(Arrays.asList("Jason"));
     ArrayList<String> testT2 = new ArrayList<>(Arrays.asList("Sam"));
     MatchUp testMU = new MatchUp(testT1, testT2);

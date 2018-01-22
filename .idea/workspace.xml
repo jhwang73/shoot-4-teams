@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de4b3364-12ae-44ea-b6a2-3715d45b7f78" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shoot-4-teams/com/company/Main.class" afterPath="$PROJECT_DIR$/out/production/shoot-4-teams/com/company/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/MatchUp.java" afterPath="$PROJECT_DIR$/src/com/company/MatchUp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/MatchUpTest.java" afterPath="$PROJECT_DIR$/src/test/MatchUpTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,15 +28,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+            <state relative-caret-position="73">
+              <caret line="86" column="43" lean-forward="false" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#readFileToPlayers#0;class#Main#0" expanded="false" />
+                <element signature="method#initializeGenerations#0;class#Main#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Integer.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Integer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="613" column="22" lean-forward="false" selection-start-line="613" selection-start-column="22" selection-end-line="613" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -40,8 +55,8 @@
       <file leaf-file-name="MatchUpTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/MatchUpTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="128">
+              <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,8 +67,8 @@
       <file leaf-file-name="MatchUp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/MatchUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="124" column="131" lean-forward="false" selection-start-line="124" selection-start-column="98" selection-end-line="124" selection-end-column="131" />
+            <state relative-caret-position="112">
+              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#MatchUp#0;class#MatchUp#0" expanded="false" />
@@ -61,22 +76,24 @@
                 <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
                 <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
                 <element signature="method#mutate#0;class#MatchUp#0" expanded="false" />
+                <element signature="e#5047#5048#0" expanded="true" />
+                <element signature="e#5132#5133#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Generation.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Generation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Generation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="126">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Generation#0;class#Generation#0" expanded="false" />
                 <element signature="e#1067#1076#0" expanded="true" />
                 <element signature="e#1556#1565#0" expanded="true" />
-                <element signature="method#makeCounts#0;class#Generation#0" expanded="false" />
+                <element signature="method#toString#0;class#Generation#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -125,10 +142,10 @@
         <option value="$PROJECT_DIR$/src/com/company/Matching.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test/GenerationTest.java" />
+        <option value="$PROJECT_DIR$/testPlayers.txt" />
         <option value="$PROJECT_DIR$/src/com/company/MatchUp.java" />
         <option value="$PROJECT_DIR$/src/com/company/Generation.java" />
         <option value="$PROJECT_DIR$/src/test/MatchUpTest.java" />
-        <option value="$PROJECT_DIR$/testPlayers.txt" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
     </option>
@@ -393,6 +410,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#readFileToPlayers#0;class#Main#0" expanded="false" />
+            <element signature="method#initializeGenerations#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -408,6 +426,8 @@
             <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
             <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
             <element signature="method#mutate#0;class#MatchUp#0" expanded="false" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -429,6 +449,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#readFileToPlayers#0;class#Main#0" expanded="false" />
+            <element signature="method#initializeGenerations#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -444,6 +465,8 @@
             <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
             <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
             <element signature="method#mutate#0;class#MatchUp#0" expanded="false" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -457,7 +480,7 @@
             <element signature="method#Generation#0;class#Generation#0" expanded="false" />
             <element signature="e#1067#1076#0" expanded="true" />
             <element signature="e#1556#1565#0" expanded="true" />
-            <element signature="method#makeCounts#0;class#Generation#0" expanded="false" />
+            <element signature="method#toString#0;class#Generation#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,40 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/GenerationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/MatchUpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Generation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Generation#0;class#Generation#0" expanded="false" />
-            <element signature="e#1067#1076#0" expanded="true" />
-            <element signature="e#1556#1565#0" expanded="true" />
-            <element signature="method#makeCounts#0;class#Generation#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testPlayers.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14">
@@ -576,10 +565,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/GenerationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/MatchUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="124" column="131" lean-forward="false" selection-start-line="124" selection-start-column="98" selection-end-line="124" selection-end-column="131" />
+        <state relative-caret-position="112">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#MatchUp#0;class#MatchUp#0" expanded="false" />
@@ -587,17 +586,52 @@
             <element signature="method#childMatchUp#0;class#MatchUp#0" expanded="false" />
             <element signature="method#playerToTeam1#0;class#MatchUp#0" expanded="false" />
             <element signature="method#mutate#0;class#MatchUp#0" expanded="false" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/MatchUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="613" column="22" lean-forward="false" selection-start-line="613" selection-start-column="22" selection-end-line="613" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+        <state relative-caret-position="73">
+          <caret line="86" column="43" lean-forward="false" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#readFileToPlayers#0;class#Main#0" expanded="false" />
+            <element signature="method#initializeGenerations#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Generation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Generation#0;class#Generation#0" expanded="false" />
+            <element signature="e#1067#1076#0" expanded="true" />
+            <element signature="e#1556#1565#0" expanded="true" />
+            <element signature="method#toString#0;class#Generation#0" expanded="false" />
           </folding>
         </state>
       </provider>

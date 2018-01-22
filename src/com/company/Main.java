@@ -40,15 +40,27 @@ public class Main {
     return players;
   }
 
+  /**
+   * Return a list of generations with a random Generation for generation 0.
+   * @param playerList
+   * @param generationCount
+   * @return
+   */
+  private static ArrayList<Generation> initializeGenerations(ArrayList<String> playerList, int generationCount) {
+    ArrayList<Generation> generations = new ArrayList<>();
+    Generation generation0 = Generation.randomGeneration(playerList, generationCount);
+    generations.add(generation0);
+    return generations;
+  }
+
   public static void main(String[] args) {
+    int generationCount = 5;
 
     // Read player file
     ArrayList<String> players = readFileToPlayers("testPlayers.txt");
 
     // Make a list of generations and make a random Generation which is generation 0
-    ArrayList<Generation> generations = new ArrayList<>();
-    Generation generation0 = Generation.randomGeneration(players, 5);
-    generations.add(generation0);
+    ArrayList<Generation> generations = initializeGenerations(players, generationCount);
 
     while (true) {
       Generation currentGeneration = generations.get(generations.size() - 1);
@@ -61,21 +73,42 @@ public class Main {
       if (cont.toLowerCase().equals("y")) {
         System.out.println("Which match up? Input the number of the match up.");
         int chosen = scanner.nextInt();
-        if (chosen >= 0 && chosen < players.size()) {
-          System.out.println(currentGeneration.get);
-          System.out.println("Thank you for using Shoot 4 Teams!");
+        if (chosen >= 0 && chosen < generationCount) {
+          System.out.println(currentGeneration.getMatchUps().get(chosen));
           break;
         } else {
           System.out.println("Please input a valid number!");
         }
+      // If user is not done, ask for which ones to breed, breed, and repeat.
       } else if (cont.toLowerCase().equals("n")) {
-        System.out.println("Which ones would you like to breed? Input the number(s) of the match up(s)");
-        // Take numbers, check that they are valid
-        // Breed, add new gen to generations, continue
+        System.out.println("Which ones would you like to breed?" +
+            " Input the number(s) of the match up(s), separated by spaces");
+        String line = scanner.nextLine();
+        String[] numberStrs = line.split(" ");
+        int[] parents = new int[numberStrs.length];
+        boolean allValid = true;
+        for(int i = 0;i < numberStrs.length;i++)
+        {
+          int parentIdx = Integer.parseInt(numberStrs[i]);
+          if (parentIdx >= 0 && parentIdx < generationCount) {
+            parents[i] = Integer.parseInt(numberStrs[i]);
+          } else {
+            System.out.println("Please input valid numbers!");
+            allValid = false;
+            break;
+          }
+        }
+        if (allValid) {
+          generations.add(currentGeneration.breedNextGeneration(parents));
+        } else {
+          break;
+        }
       } else {
         System.out.println("Please type y or n.");
       }
     }
+
+    System.out.println("Thank you for using Shoot 4 Teams!");
 
   }
 }

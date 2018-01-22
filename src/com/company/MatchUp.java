@@ -153,6 +153,6 @@ public class MatchUp {
 
   @Override
   public String toString() {
-    return team1.toString() + "\n" + team2.toString();
+    return "Team 1: " + team1.toString() + "\n" + "Team 2: " + team2.toString();
   }
 }
