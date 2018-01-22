@@ -12,7 +12,7 @@ public class Generation {
   private final int generationSize;
   private ArrayList<MatchUp> matchUps;
 
-  public Generation(ArrayList<String > playerList, int generationCount, ArrayList<MatchUp> matchUpsList) {
+  public Generation(ArrayList<String> playerList, int generationCount, ArrayList<MatchUp> matchUpsList) {
     players = playerList;
     generationSize = generationCount;
     matchUps = matchUpsList;
