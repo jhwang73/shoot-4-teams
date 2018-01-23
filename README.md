@@ -7,7 +7,7 @@ http://www.karlsims.com/papers/siggraph91.html
 
 Some definitions:
 Player - a player is simply a unique string
-Match Up - A matchup is two disjoint equal-length lists of players. It is how two teams are divided.
+Match Up - A match up is two disjoint equal-length lists of players. It is how two teams are divided.
 Generation - A generation is a list of x Match Ups.
 
 Project Purpose:
