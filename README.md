@@ -22,8 +22,7 @@ A new generation is presented back to the user, who can repeat this process inde
 ### The breeding process:
 Let **p1,...,pn** be the selected parent organisms.
 Let **x** be the number of match ups in the generation.
-
-1. For all **pi, pj**, where **i = 1,...,n. j = 1,...,i^,...,n**, compute **C(pi, pj)**.
+- For all **pi, pj**, where **i = 1,...,n. j = 1,...,i^,...,n**, compute **C(pi, pj)**.
   - **C(pi, pj)** is defined as the number of times player **pi** is on the same team as **pj** in all of the parent matchups.
   - Repeat the following process **x** times to produce the new generation:
     - Until one of the teams have **n/2** players, do the following:
@@ -32,3 +31,4 @@ Let **x** be the number of match ups in the generation.
       - Randomly select a number **rand = [0, T1(pnext) + T2(pnext)]**.
       - If **rand < T1(pnext)**, place **pnext** in team 1. Otherwise, place it in team 2.
     - Put the remaining players into the incomplete team, if it exists.
+    - Mutate the match up by swapping corresponding indices between the two teams at a given rate.
