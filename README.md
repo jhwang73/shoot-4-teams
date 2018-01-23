@@ -1,7 +1,5 @@
 # shoot-4-teams
 
-TODO: Edit, reformat, bullet/spacing for lists(processes in breeding). Consistent variable names
-
 This is a personal project inspired by Karl Sims' paper 'Artifical Evolution for Computer Graphics'
 http://www.karlsims.com/papers/siggraph91.html
 
