@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import com.company.MatchUp;
 import com.company.Generation;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -62,16 +63,29 @@ public class GenerationTest {
 
   @Test
   public void testRandomGeneration() throws Exception {
-
+    ArrayList<String> testPL = new ArrayList<>(Arrays.asList("Jason", "Matthew", "Sam", "Phillip"));
+    Generation testRandomG = Generation.randomGeneration(testPL, 3);
+    System.out.println(testRandomG.toString());
   }
 
   @Test
   public void testBreedGeneration() throws Exception {
+    ArrayList<String> testPL = new ArrayList<>(Arrays.asList("Jason", "Matthew", "Sam", "Phillip"));
 
-  }
+    ArrayList<String> testT1 = new ArrayList<>(Arrays.asList("Jason", "Matthew"));
+    ArrayList<String> testT2 = new ArrayList<>(Arrays.asList("Sam", "Phillip"));
+    MatchUp testMU1 = new MatchUp(testT1, testT2);
 
-  @Test
-  public void testMakeCounts() throws Exception {
+    ArrayList<String> testT3 = new ArrayList<>(Arrays.asList("Jason", "Sam"));
+    ArrayList<String> testT4 = new ArrayList<>(Arrays.asList("Matthew", "Phillip"));
+    MatchUp testMU2 = new MatchUp(testT3, testT4);
 
+    ArrayList<MatchUp> testMUL = new ArrayList<>(Arrays.asList(testMU1, testMU2));
+
+    Generation testG = new Generation(testPL, 2, testMUL);
+    int[] parents = {0,1};
+    Generation testBreedG = testG.breedNextGeneration(parents);
+
+    System.out.println(testBreedG.toString());
   }
 }

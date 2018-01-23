@@ -45,7 +45,7 @@ public class Generation {
    */
   public Generation breedNextGeneration(int[] parents) {
     Map<String, Map<String, Integer>> counts = makeCounts(parents);
-    ArrayList<MatchUp> nextMatchUps = new ArrayList<MatchUp>();
+    ArrayList<MatchUp> nextMatchUps = new ArrayList<>();
     for (int i = 0; i < generationSize; i++) {
       nextMatchUps.add(MatchUp.childMatchUp(players, counts)
           // Mutate the matchUp

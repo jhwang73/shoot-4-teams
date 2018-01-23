@@ -35,18 +35,12 @@ public class MatchUpTest {
   }
 
   @Test
-  public void testChildMatchUP() throws Exception {
-
-  }
-
-  @Test
-  public void testPlayerToTeam1() throws Exception {
-
-  }
-
-  @Test
   public void testMutate() throws Exception {
+    ArrayList<String> testT1 = new ArrayList<>(Arrays.asList("Jason", "Matthew"));
+    ArrayList<String> testT2 = new ArrayList<>(Arrays.asList("Sam", "Phillip"));
+    MatchUp testMU = new MatchUp(testT1, testT2);
 
+    System.out.println(testMU.mutate().toString());
   }
 
 
