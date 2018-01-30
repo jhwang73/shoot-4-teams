@@ -3,6 +3,9 @@
 This is a personal project inspired by Karl Sims' paper 'Artifical Evolution for Computer Graphics'
 http://www.karlsims.com/papers/siggraph91.html
 
+# User Interface
+Clone the repo, and run the main.java file to start the program! Simple user input process with directions.
+
 ## Definitions:
 Player - a player is simply a unique string
 Match Up - A match up is two disjoint equal-length lists of players. It is how two teams are divided.
